@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <!-- Reuse the previous installation directory, including a custom location. -->
+    <Property Id="INSTALLDIR" Secure="yes">
+      <RegistrySearch Id="XLitePreviousInstallDir" Root="HKLM" Key="Software\XLite"
+                      Name="InstallDir" Type="raw" Win64="yes" />
+    </Property>
+    <DirectoryRef Id="INSTALLDIR">
+      <Component Id="XLiteInstallLocation" Guid="EE8D8944-1B5D-4A3C-8972-6F3F9581EA7F" Win64="yes">
+        <RegistryValue Root="HKLM" Key="Software\XLite" Name="InstallDir"
+                       Type="string" Value="[INSTALLDIR]" KeyPath="yes" />
+      </Component>
+      <!-- Retain user data through upgrades/uninstall. Program files stay read-only. -->
+      <Directory Id="XLiteDataDir" Name="data">
+        <Component Id="XLiteDataFolder" Guid="F84CF06E-5469-471A-A153-9369A13FF203"
+                   Win64="yes" Permanent="yes">
+          <CreateFolder>
+            <PermissionEx Id="XLiteDataPermissions"
+                          Sddl="D:AI(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)(A;OICI;0x1301bf;;;BU)" />
+          </CreateFolder>
+        </Component>
+        <Directory Id="XLiteTempDir" Name="tmp">
+          <Component Id="XLiteTempFolder" Guid="A6FC8BBA-597E-4778-8C52-70ACCA6060E4"
+                     Win64="yes" Permanent="yes">
+            <CreateFolder />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="XLiteDownloadsDir" Name="downloads">
+        <Component Id="XLiteDownloadsFolder" Guid="FC9FA2EB-830B-4A34-A855-6937F03D7408"
+                   Win64="yes" Permanent="yes">
+          <CreateFolder>
+            <PermissionEx Id="XLiteDownloadsPermissions"
+                          Sddl="D:AI(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)(A;OICI;0x1301bf;;;BU)" />
+          </CreateFolder>
+        </Component>
+      </Directory>
+    </DirectoryRef>
+    <FeatureRef Id="DefaultFeature">
+      <ComponentRef Id="XLiteInstallLocation" />
+      <ComponentRef Id="XLiteDataFolder" />
+      <ComponentRef Id="XLiteTempFolder" />
+      <ComponentRef Id="XLiteDownloadsFolder" />
+    </FeatureRef>
+
+</Include>

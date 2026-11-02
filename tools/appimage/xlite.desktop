@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=XLite
+Comment=Xunlei accelerated downloader
+Exec=XLite
+Icon=xlite
+Categories=Network;FileTransfer;
+Terminal=false
+StartupWMClass=com-xlite-downloader-desktop-MainKt

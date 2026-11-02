@@ -1,0 +1,24 @@
+Xunlei Download SDK 1.0.2
+Fetched by tools/fetch-xunlei-sdk.ps1 (Windows) or tools/fetch-xunlei-sdk.sh (Linux/WSL).
+
+Java Desktop SDK archive
+URL: https://down.sandai.net/opensdk/download/xunlei-dlsdk-java-desktop.zip
+SHA256: 566b8c17043ff1fffe6f0d863edcd7f4359ccbfb358de350a90771b44d8b4d5a
+
+Java Android SDK (AAR)
+URL: https://down.sandai.net/opensdk/download/xunlei-dlsdk-java-android.aar
+SHA256: 22a1728c59e359c3e77732c0c516b406151916a72125c5cd8686a8e907044e6f
+
+Files generated into third_party/xunlei/m2:
+- com/xunlei/open/dlsdk-desktop/1.0.2/dlsdk-desktop-1.0.2.jar
+  SHA256: 9f13d08ed7edbbb256ca1513981992b4bde475d2fda109c74e0f658d8ac15615
+- com/xunlei/open/dlsdk-native-windows-x64/1.0.2/dlsdk-native-windows-x64-1.0.2.jar
+  SHA256: edbbc1deafc572e78fbe06e7e6ddab200fe9b5d81067c587cdabee7467a19a8e
+- com/xunlei/open/dlsdk-native-linux-x64/1.0.2/dlsdk-native-linux-x64-1.0.2.jar
+  SHA256: a11e27d77cbd5513c82bb60ee9a67856a51096c181ca19b251c8aae1132e15af
+- com/xunlei/open/dlsdk-android/1.0.2/dlsdk-android-1.0.2.aar
+  SHA256: 22a1728c59e359c3e77732c0c516b406151916a72125c5cd8686a8e907044e6f
+
+The desktop archive also ships macOS and windows-x86 native jars; XLite intentionally
+wires only windows-x64 and linux-x64. All artifacts remain the property of Xunlei;
+XLite is not affiliated with the official Xunlei client.

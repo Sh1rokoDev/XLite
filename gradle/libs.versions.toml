@@ -1,0 +1,38 @@
+[versions]
+agp = "9.4.1"
+kotlin = "2.4.20"
+compose = "1.12.1"
+coroutines = "1.11.0"
+serialization = "1.12.0"
+okio = "3.18.2"
+datetime = "0.8.0"
+jna = "5.19.1"
+activityCompose = "1.13.0"
+coreKtx = "1.19.1"
+xunlei = "1.0.2"
+
+[libraries]
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "datetime" }
+okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
+okio-fakefilesystem = { module = "com.squareup.okio:okio-fakefilesystem", version.ref = "okio" }
+jna-platform = { module = "net.java.dev.jna:jna-platform", version.ref = "jna" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+xunlei-desktop = { module = "com.xunlei.open:dlsdk-desktop", version.ref = "xunlei" }
+xunlei-android = { module = "com.xunlei.open:dlsdk-android", version.ref = "xunlei" }
+xunlei-native-windows-x64 = { module = "com.xunlei.open:dlsdk-native-windows-x64", version.ref = "xunlei" }
+xunlei-native-linux-x64 = { module = "com.xunlei.open:dlsdk-native-linux-x64", version.ref = "xunlei" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
